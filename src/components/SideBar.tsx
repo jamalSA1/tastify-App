@@ -1,32 +1,44 @@
-
-import { SignedIn, SignedOut, SignIn, SignInButton, UserButton } from '@clerk/nextjs'
+'use client'
+import { SignedIn, SignedOut, SignIn, SignInButton, UserButton, useUser } from '@clerk/nextjs'
 import {Search} from 'lucide-react'
 import { Button } from './ui/button'
+import { createUser } from ' /actions/userAction'
 
 export default function SideBar() {
+    const {user} = useUser()
+    const userEmail = user?.emailAddresses?.[0]?.emailAddress;
+const userName = user?.firstName || "User name";
+    createUser(userEmail || '', userName)
 
   return (
     <div className=' bg-white lg:w-[90%] w-full h-[120px] lg:h-[80px] rounded-br-2xl rounded-bl-2xl shadow-md fixed'>
 {/* لابتوب */}
       <div className='hidden lg:block'>
       <div className='flex justify-around flex-col p-2 mx-5 mt-5'>
-        <div className='flex justify-between w-full'>
+        <div className='flex justify-between items-center w-full'>
         <div>
-          <SignedOut>
+           <SignedOut>
+              <SignInButton>
+                <Button className='bg-orange-600'>تسجيل</Button>
+              </SignInButton>
+            </SignedOut>
             <SignedIn>
-              <Button className='bg-red-500'>تسجيل</Button>
+                <div className='border border-dashed border-orange-600 w-12 flex justify-center items-center p-0.5 rounded-3xl'>
+              <UserButton
+              appearance={{
+                elements: {
+                  avatarBox: 'w-10 h-10',
+                },
+              }}
+              />
+                </div>
             </SignedIn>
-          </SignedOut>
-
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-          </div>
+                </div>
         <div className='flex justify-between items-center border border-orange-500 mx-auto p-2 -mt-2 rounded-2xl w-[320px]'>
         <Search className='cursor-pointer' />        
         <input type='search' className='bg-white placeholder:text-black outline-none text-end' placeholder='...ابحث عن شي ما' />
         </div>
-          <h1 className='font-bold text-orange-600 text-xl'>TASTIFY</h1>
+          <h1 className='font-bold text-orange-600 text-2xl'>TASTIFY</h1>
         </div>
       </div>
       </div>
@@ -36,14 +48,15 @@ export default function SideBar() {
         <div className='flex justify-between w-full'>
           <div>
           <SignedOut>
+              <SignInButton>
+                <Button className='bg-orange-600'>تسجيل</Button>
+              </SignInButton>
+            </SignedOut>
             <SignedIn>
-              <Button className='bg-red-500'>تسجيل</Button>
+                <div className='border border-dashed border-orange-600 w-10 flex justify-center p-0.5 rounded-3xl'>
+              <UserButton />
+                </div>
             </SignedIn>
-          </SignedOut>
-
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
           </div>
           <h1 className='font-bold text-orange-600 text-xl'>TASTIFY</h1>
         </div>
