@@ -11,7 +11,7 @@ const userName = user?.firstName || "User name";
     createUser(userEmail || '', userName)
 
   return (
-    <div className=' bg-white lg:w-[90%] w-full h-[120px] lg:h-[80px] rounded-br-2xl rounded-bl-2xl shadow-md fixed'>
+    <div className=' bg-white lg:w-[90%] w-full h-[120px] lg:h-[80px] rounded-br-2xl rounded-bl-2xl shadow-md fixed z-999'>
 {/* لابتوب */}
       <div className='hidden lg:block'>
       <div className='flex justify-around flex-col p-2 mx-5 mt-5'>
@@ -54,7 +54,11 @@ const userName = user?.firstName || "User name";
             </SignedOut>
             <SignedIn>
                 <div className='border border-dashed border-orange-600 w-10 flex justify-center p-0.5 rounded-3xl'>
-              <UserButton />
+              <UserButton appearance={{
+                elements: {
+                  avatarBox: 'w-8 h-8',
+                },
+              }} />
                 </div>
             </SignedIn>
           </div>

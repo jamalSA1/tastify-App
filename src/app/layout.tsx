@@ -1,7 +1,7 @@
 import " /styles/globals.css";
 
 import {ClerkProvider} from '@clerk/nextjs'
-import { GeistSans } from "geist/font/sans";
+import { Noto_Kufi_Arabic } from "next/font/google";
 import { type Metadata } from "next";
 
 import { TRPCReactProvider } from " /trpc/react";
@@ -12,12 +12,14 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+const fontArabic = Noto_Kufi_Arabic({ subsets: ['arabic'] }) 
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <ClerkProvider>
-    <html lang="en" className={`${GeistSans.variable} bg-[#FDF4EF]`}>
+    <html lang="en" className={`${fontArabic.className} bg-[#FDF4EF]`}>
       <body>
         <TRPCReactProvider>
           {children}
