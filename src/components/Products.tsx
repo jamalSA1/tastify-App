@@ -1,40 +1,114 @@
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, LucideBookmark } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import colaProduct from 'public/cola.png'
 import React from "react";
-import { ProductCard } from './product-card';
 
 export default function Products() {
 
-  const product = {
-    id: '1',
-    name: 'cole',
-    price: 10.00,
-    image: colaProduct.src,
-    rating: 4.3,
-    category: 'juc',
-    description: 'cola'
-  }
-
   return <>
-  {/* <div className='pt-8 flex items-center justify-center flex-wrap gap-5 w-[100%] h-52 text-end'>
-    <Link href='/' className="bg-white w-40 shadow-lg rounded-xl pb-2">
-      <div className='grid place-items-center  py-2 h-32'>
-      <Image src={colaProduct.src} alt="product" width={90} height={40} />
-      </div>
-      {/* <p className='font-medium text-sm text-gray-900 w-40 p-2 ltr overflow-hidden text-nowrap text-end'>حمال علي المالكي بتتعلم</p> */}
-      {/* <div className="pr-2 flex justify-between items-center">
-      <div className="bg-orange-700 rounded-full ml-2 p-0.5">
-      <ArrowLeft width={20} height={20} color='white'/>
-      </div>
-      <p className='font-bold'>10.00sr</p>
-      </div>
-  </div> */}
+  <div className="flex justify-around flex-wrap pt-5 text-right">
 
-    <ProductCard products={[product]}/>
-    <ProductCard products={[product]}/>
-    <ProductCard products={[product]}/>
+  <div className="bg-white shadow-md rounded-lg p-4 w-52 mt-5">
+    <div className="grid place-items-center">
+    <img src={colaProduct.src} alt="Regular Fit Linen-blend T-shirt" className=" rounded-md mb-4" />
+    </div>
+    <div className="flex justify-between items-center mb-2">
+        <button className="ml-2 text-gray-400 hover:text-orange-600">
+          <LucideBookmark className="h-6 w-6" />
+        </button>
+      <span className="text-gray-500 text-sm">Catogry</span>
+    </div>
+    <h2 className="text-lg font-semibold">Regular Fit Linen-blend</h2>
+    <div className="flex justify-end items-center gap-1">
+    <p className="text-gray-600">169.00</p>
+    <span className="text-gray-500 text-[10px] mt-1.5">SAR</span>
+    </div>
+  </div>
+  <div className="bg-white shadow-md rounded-lg p-4 w-52 mt-5">
+    <div className="grid place-items-center">
+    <img src={colaProduct.src} alt="Regular Fit Linen-blend T-shirt" className=" rounded-md mb-4" />
+    </div>
+    <div className="flex justify-between items-center mb-2">
+        <button className="ml-2 text-gray-400 hover:text-orange-600">
+          <LucideBookmark className="h-6 w-6" />
+        </button>
+      <span className="text-gray-500 text-sm">Catogry</span>
+    </div>
+    <h2 className="text-lg font-semibold">Regular Fit Linen-blend</h2>
+    <div className="flex justify-end items-center gap-1">
+    <p className="text-gray-600">169.00</p>
+    <span className="text-gray-500 text-[10px] mt-1.5">SAR</span>
+    </div>
+  </div>
+  <div className="bg-white shadow-md rounded-lg p-4 w-52 mt-5">
+    <div className="grid place-items-center">
+    <img src={colaProduct.src} alt="Regular Fit Linen-blend T-shirt" className=" rounded-md mb-4" />
+    </div>
+    <div className="flex justify-between items-center mb-2">
+        <button className="ml-2 text-gray-400 hover:text-orange-600">
+          <LucideBookmark className="h-6 w-6" />
+        </button>
+      <span className="text-gray-500 text-sm">Catogry</span>
+    </div>
+    <h2 className="text-lg font-semibold">Regular Fit Linen-blend</h2>
+    <div className="flex justify-end items-center gap-1">
+    <p className="text-gray-600">169.00</p>
+    <span className="text-gray-500 text-[10px] mt-1.5">SAR</span>
+    </div>
+  </div>
+  <div className="bg-white shadow-md rounded-lg p-4 w-52 mt-5">
+    <div className="grid place-items-center">
+    <img src={colaProduct.src} alt="Regular Fit Linen-blend T-shirt" className=" rounded-md mb-4" />
+    </div>
+    <div className="flex justify-between items-center mb-2">
+        <button className="ml-2 text-gray-400 hover:text-orange-600">
+          <LucideBookmark className="h-6 w-6" />
+        </button>
+      <span className="text-gray-500 text-sm">Catogry</span>
+    </div>
+    <h2 className="text-lg font-semibold">Regular Fit Linen-blend</h2>
+    <div className="flex justify-end items-center gap-1">
+    <p className="text-gray-600">169.00</p>
+    <span className="text-gray-500 text-[10px] mt-1.5">SAR</span>
+    </div>
+  </div>
+  <div className="bg-white shadow-md rounded-lg p-4 w-52 mt-5">
+    <div className="grid place-items-center">
+    <img src={colaProduct.src} alt="Regular Fit Linen-blend T-shirt" className=" rounded-md mb-4" />
+    </div>
+    <div className="flex justify-between items-center mb-2">
+        <button className="ml-2 text-gray-400 hover:text-orange-600">
+          <LucideBookmark className="h-6 w-6" />
+        </button>
+      <span className="text-gray-500 text-sm">Catogry</span>
+    </div>
+    <h2 className="text-lg font-semibold">Regular Fit Linen-blend</h2>
+    <div className="flex justify-end items-center gap-1">
+    <p className="text-gray-600">169.00</p>
+    <span className="text-gray-500 text-[10px] mt-1.5">SAR</span>
+    </div>
+  </div>
+  <div className="bg-white shadow-md rounded-lg p-4 w-52 mt-5">
+    <div className="grid place-items-center">
+    <img src={colaProduct.src} alt="Regular Fit Linen-blend T-shirt" className=" rounded-md mb-4" />
+    </div>
+    <div className="flex justify-between items-center mb-2">
+        <button className="ml-2 text-gray-400 hover:text-orange-600">
+          <LucideBookmark className="h-6 w-6" />
+        </button>
+      <span className="text-gray-500 text-sm">Catogry</span>
+    </div>
+    <h2 className="text-lg font-semibold">Regular Fit Linen-blend</h2>
+    <div className="flex justify-end items-center gap-1">
+    <p className="text-gray-600">169.00</p>
+    <span className="text-gray-500 text-[10px] mt-1.5">SAR</span>
+    </div>
+  </div>
+
+  
+</div>
+
     </>
 }
 
