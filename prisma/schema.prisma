@@ -12,19 +12,33 @@ datasource db {
 }
 
 model userTastify {
-  id        String   @id @default(cuid())
-  email     String   @unique
-  name      String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id                    String  @id @unique
+  email                 String
+  firstName             String
+  lastName              String
+  profileImage          String
+  connectedAccountId    String  @unique
+  stripeConnectedLinked Boolean @default(false)
+
+  product Product[]
 }
 
 model Product {
-  id        String   @id @default(cuid())
-  name      String
-  details   String
-  price     Float
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  image     String
+  id       String       @id @default(uuid())
+  name     String
+  details  String
+  price    Int
+  category categoryType
+  image    String[]
+
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  userTastify   userTastify? @relation(fields: [userTastifyId], references: [id])
+  userTastifyId String?
+}
+
+enum categoryType {
+  juice
+  milk
+  candie
 }
