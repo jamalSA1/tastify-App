@@ -22,11 +22,11 @@ async function getData(category: string) {
       break;
     }
     case "all": {
-      input = redirect("/");
+      input = "all";
       break;
     }
     default: {
-      return notFound();
+      return redirect("/");
     }
   }
 

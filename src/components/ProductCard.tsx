@@ -9,6 +9,7 @@ import {
 import { Skeleton } from " /components/ui/skeleton";
 import Image from "next/image";
 import Link from "next/link";
+import MaxWidthWrapper from "./MaxWidthWrapper";
 
 interface iAppProps {
   images: string[];
@@ -35,7 +36,7 @@ export function ProductCard({
                   src={item}
                   fill
                   className="object-cover w-full h-full rounded-lg"
-                />
+                  />
               </div>
             </CarouselItem>
           ))}

@@ -23,8 +23,8 @@ export const navbarLinks = [
   },
   {
     id: 4,
-    name: "candy",
-    href: "/products/candy",
+    name: "Candie",
+    href: "/products/candie",
   },
 ] as const;
 
