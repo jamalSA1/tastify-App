@@ -14,7 +14,6 @@ interface iAppProps {
   images: string[];
   name: string;
   price: number;
-  smallDescription: string;
   id: string;
 }
 
@@ -22,7 +21,6 @@ export function ProductCard({
   images,
   id,
   price,
-  smallDescription,
   name,
 }: iAppProps) {
   return (
@@ -44,16 +42,12 @@ export function ProductCard({
         </CarouselContent>
       </Carousel>
 
-      <div className="flex justify-between items-center mt-2 md:grid md:grid-cols-1">
-        <h1 className="font-semibold text-xl">{name}</h1>
-        <h3 className="inline-flex items-center rounded-md bg-none px-2 py-1 md:px-0 text-xs font-medium text-zinc-950 ">
+      <div className="flex justify-between items-center mt-2">
+        <h1 className="font-semibold text-xl overflow-hidden h-[30px] w-[50%]">{name}</h1>
+        <h3 className="inline-flex items-center rounded-md bg-none px-2 py-1 md:px-0 text-xs font-medium text-zinc-950 text-right">
           {price}.00 SAR
         </h3>
       </div>
-
-      {/* <p className="text-gray-600 line-clamp-2 text-sm mt-2">
-        {smallDescription}
-      </p> */}
 
       <Button asChild className="w-full mt-5">
         <Link href={`/product/${id}`}>Learn More!</Link>

@@ -1,4 +1,5 @@
 'use client'
+import { categoryItems } from " /lib/categroyItems";
 import { cn } from " /lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -11,21 +12,21 @@ export const navbarLinks = [
     href: "/",
   },
   {
-    id: 1,
-    name: "Templates",
-    href: "#",
-  },
-  {
     id: 2,
-    name: "Ui Kits",
-    href: "#",
+    name: "Juice",
+    href: "/products/juice",
   },
   {
     id: 3,
-    name: "Icons",
-    href: "#",
+    name: "Milk",
+    href: "/products/milk",
   },
-];
+  {
+    id: 4,
+    name: "candy",
+    href: "/products/candy",
+  },
+] as const;
 
 
 export default function NavbarLink() {

@@ -24,20 +24,14 @@ async function getData() {
 export async function NewestProducts() {
   const data = await getData();
   return (
-    <section className="mt-12">
+    <section className="max-w-7xl mx-auto px-4 md:px-8 mt-12">
       <div className="md:flex md:items-center md:justify-between w-full">
         <h2 className="text-2xl font-extrabold tracking-tighter ">
           Newest Products
         </h2>
-        <Link
-          href="#"
-          className="text-sm hidden font-medium text-primary hover:text-primary/90 md:block"
-        >
-          All Products <span>&rarr;</span>
-        </Link>
       </div>
 
-      <div className="grid gird-cols-2 lg:grid-cols-3 sm:grid-cols-2 mt-4 gap-10">
+      <div className="grid grid-cols-2 lg:grid-cols-3 sm:grid-cols-2 gap-10 mt-4">
         {data.map((product) => (
           <ProductCard
             images={product.image}
@@ -45,7 +39,6 @@ export async function NewestProducts() {
             id={product.id}
             name={product.name}
             price={product.price}
-            smallDescription={product.details}
           />
         ))}
       </div>

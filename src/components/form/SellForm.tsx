@@ -17,6 +17,7 @@ import { SelectCategory } from " /components/SelectCategory";
 import { Textarea } from " /components/ui/textarea";
 import { UploadDropzone } from " /utils/uploadthing";
 import { Submitbutton } from " /components/SubmitButtons";
+import Image from "next/image";
 
 
 export function SellForm() {

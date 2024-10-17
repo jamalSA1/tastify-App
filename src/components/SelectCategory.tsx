@@ -2,6 +2,7 @@
 
 import { Card, CardHeader } from " /components/ui/card";
 import { categoryItems } from " /lib/categroyItems";
+import Link from "next/link";
 import { useState } from "react";
 
 export function SelectCategory() {

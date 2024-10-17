@@ -23,7 +23,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${fontArabic.className} bg-[#FDF4EF]`}>
+    <html lang="en" className={`${fontArabic.className}`}>
       <body>
         <NextSSRPlugin
           routerConfig={extractRouterConfig(ourFileRouter)}
